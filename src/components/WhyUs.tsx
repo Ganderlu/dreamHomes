@@ -47,8 +47,10 @@ export default function WhyUs() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
       <div className="mb-8 text-center">
-        <h2 className="text-3xl font-semibold text-zinc-900">Why Choose Us</h2>
-        <p className="mt-2 text-zinc-600">
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
+          Why Choose Us
+        </h2>
+        <p className="mt-2 text-sm font-medium text-zinc-700">
           Value you can trust from the first search to the final signature.
         </p>
       </div>
@@ -61,8 +63,10 @@ export default function WhyUs() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
               {it.icon}
             </div>
-            <p className="font-medium text-zinc-900">{it.title}</p>
-            <p className="text-sm text-zinc-600">{it.description}</p>
+            <p className="font-semibold text-zinc-900">{it.title}</p>
+            <p className="text-sm font-medium text-zinc-700">
+              {it.description}
+            </p>
           </div>
         ))}
       </div>

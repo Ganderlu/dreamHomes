@@ -18,10 +18,12 @@ export default function CTA({ image, title, subtitle, button }: Props) {
         className="h-64 w-full object-cover opacity-80"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
       <div className="absolute inset-0 flex flex-col items-start justify-center p-8 text-white">
-        <h3 className="text-3xl font-semibold">{title}</h3>
-        <p className="mt-2 max-w-xl text-zinc-200">{subtitle}</p>
+        <h3 className="text-3xl font-bold tracking-tight">{title}</h3>
+        <p className="mt-3 max-w-xl text-sm font-medium text-zinc-100">
+          {subtitle}
+        </p>
         {button ? (
           <a
             href={button.href}

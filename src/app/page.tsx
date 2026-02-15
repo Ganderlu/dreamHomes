@@ -2,14 +2,14 @@ import CTA from "@/components/CTA";
 import FeatureCard from "@/components/FeatureCard";
 import Navbar from "@/components/Navbar";
 import PropertyCard from "@/components/PropertyCard";
-import SearchBar from "@/components/SearchBar";
+import HeroSlider from "@/components/HeroSlider";
 import WhyUs from "@/components/WhyUs";
 import Image from "next/image";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1560185127-6ed189bf02cb?w=1600&auto=format&fit=crop&q=80";
-const interiorImage =
-  "https://images.unsplash.com/photo-1505691723518-36a037fbc224?w=1200&auto=format&fit=crop&q=80";
+const heroImages = ["/house1.jpg", "/house2.jpg", "/house3.jpg"];
+const heroImage = heroImages[0];
+const interiorImage = "/adam.jpeg";
+const browserImage = "/vi.jpg";
 const property1 =
   "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&auto=format&fit=crop&q=80";
 const property2 =
@@ -19,69 +19,70 @@ const property3 =
 
 export default function Home() {
   return (
-    <div className="bg-zinc-50">
+    <div className="bg-white">
       <Navbar />
-      <header className="mx-auto max-w-6xl px-4 pb-10 pt-6">
-        <div className="relative overflow-hidden rounded-2xl bg-zinc-900 shadow-lg">
-          <Image
-            src={heroImage}
-            alt=""
-            width={1600}
-            height={600}
-            className="h-[380px] w-full object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center text-white">
-            <h1 className="text-4xl font-semibold">Find Your Dream Home</h1>
-            <p className="mt-2 max-w-2xl text-zinc-200">
-              Explore the best properties in your area.
-            </p>
-            <div className="mt-8 w-full max-w-4xl">
-              <SearchBar />
-            </div>
-          </div>
-        </div>
-      </header>
+      <HeroSlider images={heroImages} />
 
       <main className="mx-auto max-w-6xl space-y-16 px-4 pb-20">
-        <WhyUs />
-        <section className="grid items-center gap-8 lg:grid-cols-2">
-          <div>
-            <h3 className="text-3xl font-semibold text-zinc-900">About Us!</h3>
-            <p className="mt-2 text-zinc-600">
-              We help people find homes they love with transparent data and
-              experienced local agents. From first search to final signature,
-              we guide every step.
+        <section>
+          <div className="mt-20 text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+              Why Clients Trust DreamHomes
+            </h2>
+            <p className="mt-3 text-sm font-medium text-zinc-700 sm:text-base">
+              A modern real estate experience built on expertise, transparency and
+              results.
             </p>
-            <ul className="mt-4 grid gap-2 text-sm text-zinc-700">
-              <li>• Expert advice from top-rated agents</li>
-              <li>• Curated listings with verified details</li>
-              <li>• Seamless process for buyers and sellers</li>
-            </ul>
-            <a
-              href="/about"
-              className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
-            >
-              Learn More
-            </a>
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src={interiorImage}
-              alt=""
-              width={1200}
-              height={800}
-              className="h-80 w-full object-cover"
-            />
+          <WhyUs />
+        </section>
+
+        <section className="space-y-8">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-600">
+              About the CEO
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+              Leadership You Can Rely On
+            </h2>
+          </div>
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <p className="mt-2 text-sm font-medium text-zinc-700 sm:text-base">
+                We help people secure homes they love with data-driven insights and
+                experienced local agents. From the first viewing to the final
+                signature, every detail is managed with care.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm font-semibold text-zinc-800">
+                <li>• Expert advice from top-rated agents</li>
+                <li>• Curated listings with verified details</li>
+                <li>• Seamless process for buyers and sellers</li>
+              </ul>
+              <a
+                href="/about"
+                className="mt-6 inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+              >
+                Learn More
+              </a>
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src={interiorImage}
+                alt=""
+                width={1200}
+                height={800}
+                className="h-80 w-full object-cover"
+              />
+            </div>
           </div>
         </section>
-        <section>
+
+        {/* <section>
           <div className="mb-6 text-center">
-            <h2 className="text-3xl font-semibold text-zinc-900">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               Featured Properties
             </h2>
-            <p className="mt-1 text-zinc-600">
+            <p className="mt-2 text-sm text-zinc-600 sm:text-base">
               Explore the best properties in your area.
             </p>
           </div>
@@ -125,14 +126,14 @@ export default function Home() {
               View All Properties
             </a>
           </div>
-        </section>
+        </section> */}
 
         <section className="grid items-center gap-8 lg:grid-cols-2">
           <div>
-            <h3 className="text-3xl font-semibold text-zinc-900">
+            <h3 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               Browse Properties By Type
             </h3>
-            <p className="mt-2 text-zinc-600">
+            <p className="mt-3 text-sm font-medium text-zinc-700 sm:text-base">
               Start the search you control with a trusted finish.
             </p>
             <div className="mt-6 grid gap-4">
@@ -166,7 +167,7 @@ export default function Home() {
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src={interiorImage}
+              src={browserImage}
               alt=""
               width={1200}
               height={800}
@@ -177,10 +178,10 @@ export default function Home() {
 
         <section>
           <div className="mb-6 text-center">
-            <h2 className="text-3xl font-semibold text-zinc-900">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
               Recent Properties for Sale
             </h2>
-            <p className="mt-1 text-zinc-600">
+            <p className="mt-2 text-sm font-medium text-zinc-700 sm:text-base">
               Find fresh properties in our selection for you.
             </p>
           </div>

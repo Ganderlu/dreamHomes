@@ -30,10 +30,7 @@ const Icon = {
   ),
   Area: (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fill="currentColor"
-        d="M3 5h18v14H3V5zm2 2v10h14V7H5z"
-      />
+      <path fill="currentColor" d="M3 5h18v14H3V5zm2 2v10h14V7H5z" />
     </svg>
   ),
   Heart: (props: React.SVGProps<SVGSVGElement>) => (
@@ -85,7 +82,7 @@ export default function PropertyCard({
             <span className="text-xs">{likes}</span>
           </div>
         </div>
-        <p className="text-sm text-zinc-600">{title}</p>
+        <p className="text-sm font-semibold text-zinc-800">{title}</p>
         <div className="mt-2 flex items-center gap-4 text-xs text-zinc-500">
           <span className="inline-flex items-center gap-1">
             <Icon.Bed className="h-4 w-4" /> {beds} Bed
